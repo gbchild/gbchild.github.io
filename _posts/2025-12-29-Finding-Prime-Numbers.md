@@ -1,3 +1,4 @@
+<img width="1920" height="1080" alt="finding-primes-title-img" src="https://github.com/user-attachments/assets/19f2c3db-1ec1-4b35-8976-08a616c8fa1e" />
 ---
 layout: post
 title: Finding All Prime Numbers Under 1,000,000 Using Python
