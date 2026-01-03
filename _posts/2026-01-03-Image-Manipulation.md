@@ -44,10 +44,11 @@ plt.imshow(camaro)
 plt.show()
 ```
 
+--- 
+
 Let's try cropping the image. We only want to crop or slice images along the first two axes, rather than the third, which corresponds to the colour channels.    
 
 
- 
 The first axis is the image's y-axis; slicing it crops vertically.  
 
 ```ruby
@@ -72,16 +73,17 @@ plt.imshow(cropped)
 plt.show()
 ```
 
+![camaro_cropped](https://github.com/user-attachments/assets/d23650ec-fc81-4e3c-9d74-a93f749c09d7)
+
 This looks good! To save the image to my disk, we can use another function from scikit-image: io.imsave.
 
 ```ruby
 io.imsave("camaro_cropped.jpg", cropped)
 ```
 
+--- 
 
 Now, let's try doing something a bit different, flipping images. When slicing an array, we can use the start-stop-step logic to specify exactly what we want to slice out. If we use -1 for the step, we will reverse the image.
-
----
 
 1) To flip our image vertically: Here, we reverse the rows and keep the columns and colour channels untouched.
 
@@ -93,6 +95,7 @@ plt.show()
 io.imsave("camaro_vertical_flip.jpg", vertical_flip)
 ``` 
 
+![camaro_vertical_flip](https://github.com/user-attachments/assets/d6c9f681-54f8-406a-91ca-34c4be5f8394)
 
 2) To flip our image horizontally: Here, we reverse the columns and keep the rows and colour channels untouched.
 
@@ -103,6 +106,9 @@ plt.show()
 
 io.imsave("camaro_horizontal_flip.jpg", horizontal_flip)
 ```
+
+![camaro_horizontal_flip](https://github.com/user-attachments/assets/0ef1898c-e4f4-4183-ab6c-1aa2a99513b5)
+
 ---
 
 We can also manipulate colour channels. For example, we can extract a red version, a blue verion, and a green version of our image by setting the other colour channels to zero. Here, we do not want to crop out the other channels; we want to make them zero instead.
@@ -110,9 +116,8 @@ We can also manipulate colour channels. For example, we can extract a red versio
 The easiest way to do this is to create an array of zeros that is the same size as our image, and then fill only the red colour channel, for example, with the red values from the actual image.
 We can use numpy.zeros to create an array of zeros, and we want it to be the same dimensions as our original image. So, instead of manually inputting these values, we can use the 'shape' attribute, which provides the precise values. We also need to ensure that the array's data type is equal to uint8, an unsigned 8-bit integer, which is the data type we often use when working with images in NumPy.
 
----
-
 1) Red
+
 To create a red version of our image, we first create a NumPy array of the same size and dimensions as the original image, filled with zeros. Then, we fill in the rows and columns with the values for the red channel only, leaving the other two colour channels as zeros. 
 
 ```ruby
@@ -148,3 +153,5 @@ plt.show()
 
 io.imsave("camaro_camaro_rainbow.jpg", camaro_rainbow)
 ```
+
+![camaro_camaro_rainbow](https://github.com/user-attachments/assets/116000d8-6f7e-4981-a37a-96fa4c2ad52c)
