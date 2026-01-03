@@ -44,6 +44,8 @@ plt.imshow(camaro)
 plt.show()
 ```
 
+![camaro](https://github.com/user-attachments/assets/485952f1-5008-40ea-9764-e258f2427c93)
+
 --- 
 
 Let's try cropping the image. We only want to crop or slice images along the first two axes, rather than the third, which corresponds to the colour channels.    
